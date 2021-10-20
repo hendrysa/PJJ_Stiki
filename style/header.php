@@ -8,7 +8,7 @@
     <header class="navbar navbar-fixed-top">
       <div class="navbar-branding">
         <a class="navbar-brand" href="./">
-          <b>Demo</b>&nbspPPJ
+          <b>Demo</b>&nbspPJJ
         </a>
         <span id="toggle_sidemenu_l" class="ad ad-lines"></span>
       </div>
