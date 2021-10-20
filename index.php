@@ -4,6 +4,7 @@
         <?php
             include 'style/style.php';
         ?>
+        <script src="assets/js/main.js"></script>
     </head>
     <body class="dashboard-page sb-l-o sb-r-c">
         <?php
@@ -12,12 +13,12 @@
         <div id='main'>
             <?php
                 include 'style/header.php';
-                include 'style/navbar.php'
+                include 'style/navbar.php';
             ?>
             <!-- Start: Content-Wrapper -->
             <section id="content_wrapper">
                 <?php
-                    include 'style/dropmenu.php';
+                    //include 'style/dropmenu.php';
                 ?>
                 <!-- Start: Topbar -->
                 <header id="topbar">

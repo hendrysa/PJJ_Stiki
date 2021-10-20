@@ -4,15 +4,16 @@
         <?php
             include 'style/style.php';
         ?>
+        <script src="assets/js/main.js"></script>
     </head>
-    <body class="dashboard-page sb-l-o sb-r-c">
+    <body class="sb-l-o sb-r-c">
         <?php
             include 'style/theme.php';
         ?>
         <div id='main'>
             <?php
                 include 'style/header.php';
-                include 'style/navbar.php'
+                include 'style/navbar.php';
             ?>
             <!-- Start: Content-Wrapper -->
             <section id="content_wrapper">
@@ -216,7 +217,7 @@
         <script type="text/javascript">
         jQuery(document).ready(function() {
 
-            $('input[type=checkbox]').prop('checked', false)
+            $('input[type=checkbox]').prop('checked', false);
 
             "use strict";
 

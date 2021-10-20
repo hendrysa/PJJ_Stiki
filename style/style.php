@@ -47,7 +47,6 @@
         <!-- Theme Javascript -->
         <script src="assets/js/utility/utility.js"></script>
         <script src="assets/js/demo/demo.js"></script>
-        <script src="assets/js/main.js"></script>
 
         <!-- Widget Javascript -->
         <script src="assets/js/demo/widgets.js"></script>
