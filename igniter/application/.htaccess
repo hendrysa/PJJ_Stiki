@@ -1,7 +1,7 @@
 <IfModule mod_rewrite.c>
 
     RewriteEngine On
-    RewriteBase /web/pjj/igniter/
+    RewriteBase /web/pjj/skiti_test/igniter/
 
 
     # Removes trailing slashes (prevents SEO duplicate content issues)
@@ -30,9 +30,11 @@
     # Checks to see if the user is attempting to access a valid file,
     # such as an image or css document, if this isn't true it sends the
     # request to index.php
+    RewriteCond $1 !^(index\.php|images|robots\.txt)
+    RewriteCond $1 !^(index\.php|assets|style|vendor|upload|robots\.txt|.*\.css|.*\.php|.*\.js|.*\.jpg)
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteRule ^(.*)$ $1 [L]
+    RewriteRule ^(.*)$ index.php/$1 [L] 
 
 </IfModule>
 

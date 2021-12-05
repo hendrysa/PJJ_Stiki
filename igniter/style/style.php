@@ -9,40 +9,47 @@
         <meta name="author" content="AdminDesigns">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <?php
+        <!-- Font CSS (Via CDN) -->
+        <link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600'>
 
-        	function base_url($a)
-        	{
-        		$base = 'http://192.168.1.102/web/pjj/igniter/';
-        		$url = $base . $a;
-        		return $url;
-        	}
+        <!-- Theme CSS -->
+        <link rel="stylesheet" type="text/css" href="assets/skin/default_skin/css/theme.css">
 
-	        echo"<link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600'>";
+        <!-- Admin Forms CSS -->
+        <link rel="stylesheet" type="text/css" href="assets/admin-tools/admin-forms/css/admin-forms.css">
 
-	        echo'<link rel="stylesheet" type="text/css" href="'.base_url('assets/skin/default_skin/css/theme.css').'">';
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="assets/img/favicon.ico">
 
-	        echo'<link rel="stylesheet" type="text/css" href="'.base_url('assets/admin-tools/admin-forms/css/admin-forms.css').'">';
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+            <![endif]-->
 
-	        echo'<link rel="shortcut icon" href="'.base_url('assets/img/favicon.ico').'">';
+        <!-- jQuery -->
+        <script src="vendor/jquery/jquery-1.11.1.min.js"></script>
+        <script src="vendor/jquery/jquery_ui/jquery-ui.min.js"></script>
 
-	        echo'<script src="'.base_url('vendor/jquery/jquery-1.11.1.min.js').'"></script>';
-	        echo'<script src="'.base_url('vendor/jquery/jquery_ui/jquery-ui.min.js').'"></script>';
+        <!-- HighCharts Plugin -->
+        <script src="vendor/plugins/highcharts/highcharts.js"></script>
 
-	        echo'<script src="'.base_url('vendor/plugins/highcharts/highcharts.js').'"></script>';
+        <!-- Sparklines Plugin -->
+        <script src="vendor/plugins/sparkline/jquery.sparkline.min.js"></script>
 
-	        echo'<script src="'.base_url('vendor/plugins/sparkline/jquery.sparkline.min.js').'"></script>';
+        <!-- Simple Circles Plugin -->
+        <script src="vendor/plugins/circles/circles.js"></script>
 
-	        echo'<script src="'.base_url('vendor/plugins/circles/circles.js').'"></script>';
+        <!-- JvectorMap Plugin + US Map (more maps in plugin/assets folder) -->
+        <script src="vendor/plugins/jvectormap/jquery.jvectormap.min.js"></script>
+        <script src="vendor/plugins/jvectormap/assets/jquery-jvectormap-us-lcc-en.js"></script> 
 
-	        echo'<script src="'.base_url('vendor/plugins/jvectormap/jquery.jvectormap.min.js').'"></script>';
-	        echo'<script src="'.base_url('vendor/plugins/jvectormap/assets/jquery-jvectormap-us-lcc-en.js').'"></script>';
+        <!-- Theme Javascript -->
+        <script src="assets/js/utility/utility.js"></script>
+        <script src="assets/js/demo/demo.js"></script>
 
-	        echo'<script src="'.base_url('assets/js/utility/utility.js').'"></script>';
-	        echo'<script src="'.base_url('assets/js/demo/demo.js').'"></script>';
-
-	        echo'<script src="'.base_url('assets/js/demo/widgets.js').'"></script>';
-        ?>
+        <!-- Widget Javascript -->
+        <script src="assets/js/demo/widgets.js"></script>
     </head>
     <body>
     </body>

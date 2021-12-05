@@ -25,9 +25,11 @@ class Rekanan extends CI_Model
     return FALSE;
   }
 
-  function get_data($data)
+  function get_data()
   {
-
+    $this->load->database();
+    $data = $this->db->query("Select * from Data_Rekanan");
+    return $data->result();
   }
 
   function update_data($data)
@@ -35,9 +37,11 @@ class Rekanan extends CI_Model
 
   }
 
-      //function get_all($nbank){
-        //$query=$this->db->query("SELECT * FROM Bank where Bank='".$nbank."'");
-        //return $query->result();
-      //}
+  function delete_data($id)
+  {
+    $this->load->database();
+    $this->db->query("DELETE FROM Data_Rekanan where id=$id");
+  }
+
 }
 ?>
