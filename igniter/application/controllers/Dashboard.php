@@ -20,6 +20,7 @@ class Dashboard extends CI_Controller {
 	 */
 	public function index()
 	{
+		$this->load->view('template/theme');
 		$this->load->view('Dashboard');
 	}
 }

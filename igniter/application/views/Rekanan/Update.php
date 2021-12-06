@@ -3,50 +3,22 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 ?><!DOCTYPE html>
 <html>
     <head>
-        <?php
-            include 'style/style.php';
-        ?>
-        <script src="assets/js/main.js"></script>
     </head>
     <body class="sb-l-o sb-r-c">
-        <?php
-            include 'style/theme.php';
-        ?>
         <div id='main'>
             <?php
-                include 'style/header.php';
-                include 'style/navbar.php';
+                $this->load->view('template/header');
+                $this->load->view('template/navbar');
             ?>
             <!-- Start: Content-Wrapper -->
             <section id="content_wrapper">
                 <?php
-                    include 'style/dropmenu.php';
+                    $this->load->view('template/dropmenu');
                 ?>
-                <!-- Start: Topbar -->
-                <header id="topbar">
-                    <div class="topbar-left">
-                        <ol class="breadcrumb">
-                            <li class="crumb-active">
-                                <a href="form_rekanan.php">Form Rekanan</a>
-                            </li>
-                            <li class="crumb-icon">
-                                <a href=".">
-                                    <span class="glyphicon glyphicon-home"></span>
-                                </a>
-                            </li>
-                            <li class="crumb-link">
-                                <a href=".">Setting Data Master</a>
-                            </li>
-                            <li class="crumb-trail">Form Rekanan</li>
-                        </ol>
-                    </div>
-                </header>
-                <!-- End: Topbar -->
 
                 <!-- Begin: Content -->
                 <section id="content" class="animated fadeIn">
                     <div class="row">
-
                         <div class="col-fluid">
                         <!-- Input Fields -->
                         <div class="panel">
@@ -61,7 +33,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         <label for="id_rekanan" class="col-lg-3 control-label">ID Rekanan</label>
                                         <div class="col-lg-8">
                                             <div class="bs-component">
-                                                <input type="text" name="id_rekanan" class="form-control required" placeholder="Type Here...">
+                                                <input type="text" name="id_rekanan" class="form-control" required value="<?php echo $data[0]->ID_Rekanan; ?>">
                                             </div>
                                         </div>
                                     </div>
@@ -70,7 +42,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         <label for="nama_rekanan" class="col-lg-3 control-label">Nama Rekanan</label>
                                         <div class="col-lg-8">
                                             <div class="bs-component">
-                                                <input type="text" name="nama_rekanan" class="form-control" required placeholder="Type Here...">
+                                                <input type="text" name="nama_rekanan" class="form-control" required value="<?php echo $data[0]->Nama_Rekanan; ?>">
                                             </div>
                                         </div>
                                     </div>
@@ -79,7 +51,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         <label for="nama_pic" class="col-lg-3 control-label">Nama Person In Carge (PIC)</label>
                                         <div class="col-lg-8">
                                             <div class="bs-component">
-                                                <input type="text" name="pic" class="form-control" required placeholder="Type Here...">
+                                                <input type="text" name="pic" class="form-control" required value="<?php echo $data[0]->Nama_PIC; ?>">
                                             </div>
                                         </div>
                                     </div>
@@ -117,7 +89,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         <label for="nomor_telepon" class="col-lg-3 control-label">Nomor Telepon</label>
                                         <div class="col-lg-8">
                                             <div class="bs-component">
-                                                <input type="tel" name="no_tlpn" minlength=10 maxlength=12 class="form-control" pattern="[0-9]{12}" required placeholder="08xxxxxxxxxx">
+                                                <input type="tel" name="no_tlpn" minlength=10 maxlength=12 class="form-control" pattern="[0-9]{12}" required value="<?php echo $data[0]->Nomor_Telepon; ?>">
                                             </div>
                                         </div>
                                     </div>
@@ -126,7 +98,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         <label for="email" class="col-lg-3 control-label">Email</label>
                                         <div class="col-lg-8">
                                             <div class="bs-component">
-                                                <input type="email" name="email" required class="form-control" placeholder="">
+                                                <input type="email" name="email" required class="form-control" value="<?php echo $data[0]->Email; ?>">
                                             </div>
                                         </div>
                                     </div>
@@ -135,7 +107,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         <label for="alamat" class="col-lg-3 control-label">Alamat</label>
                                         <div class="col-lg-8">
                                             <div class="bs-component">
-                                                <input type="text" name="alamat" required class="form-control" placeholder="">
+                                                <input type="text" name="alamat" required class="form-control" value="<?php echo $data[0]->Alamat; ?>">
                                             </div>
                                         </div>
                                     </div>
@@ -144,7 +116,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         <label for="no_mou" class="col-lg-3 control-label">No. MOU</label>
                                         <div class="col-lg-8">
                                             <div class="bs-component">
-                                                <input type="text" name="no_mou" required class="form-control" placeholder="">
+                                                <input type="text" name="no_mou" required class="form-control" value="<?php echo $data[0]->No_MOU; ?>">
                                             </div>
                                         </div>
                                     </div>
@@ -153,7 +125,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         <label for="tanggal_mou" class="col-lg-3 control-label">Tanggal MOU</label>
                                         <div class="col-lg-8">
                                             <div class="bs-component">
-                                                <input type="date" name="tgl_mou" required class="form-control" placeholder="">
+                                                <input type="date" name="tgl_mou" required class="form-control" value="<?php echo $data[0]->Tanggal_MOU; ?>">
                                             </div>
                                         </div>
                                     </div>
@@ -194,7 +166,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </section>
                 <!-- End: Content -->
                 <?php
-                    include 'style/footer.php';
+                    $this->load->view('template/footer');
                 ?>
             </section>
             <!-- End: Content-Wrapper -->

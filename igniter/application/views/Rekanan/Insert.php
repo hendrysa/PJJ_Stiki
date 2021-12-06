@@ -3,45 +3,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 ?><!DOCTYPE html>
 <html>
     <head>
-        <?php
-            include 'style/style.php';
-        ?>
-        <script src="assets/js/main.js"></script>
     </head>
     <body class="sb-l-o sb-r-c">
-        <?php
-            include 'style/theme.php';
-        ?>
         <div id='main'>
             <?php
-                include 'style/header.php';
-                include 'style/navbar.php';
+                $this->load->view('template/header');
+                $this->load->view('template/navbar');
             ?>
             <!-- Start: Content-Wrapper -->
             <section id="content_wrapper">
                 <?php
-                    include 'style/dropmenu.php';
+                    $this->load->view('template/dropmenu');
                 ?>
-                <!-- Start: Topbar -->
-                <header id="topbar">
-                    <div class="topbar-left">
-                        <ol class="breadcrumb">
-                            <li class="crumb-active">
-                                <a href="form_rekanan.php">Form Rekanan</a>
-                            </li>
-                            <li class="crumb-icon">
-                                <a href=".">
-                                    <span class="glyphicon glyphicon-home"></span>
-                                </a>
-                            </li>
-                            <li class="crumb-link">
-                                <a href=".">Setting Data Master</a>
-                            </li>
-                            <li class="crumb-trail">Form Rekanan</li>
-                        </ol>
-                    </div>
-                </header>
-                <!-- End: Topbar -->
 
                 <!-- Begin: Content -->
                 <section id="content" class="animated fadeIn">
@@ -194,7 +167,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </section>
                 <!-- End: Content -->
                 <?php
-                    include 'style/footer.php';
+                    $this->load->view('template/footer');
                 ?>
             </section>
             <!-- End: Content-Wrapper -->

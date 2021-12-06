@@ -1,11 +1,12 @@
 <?php
 
-class Rekanan extends CI_Model
+class Model_rekanan extends CI_Model
 {
   
   function insert_data($data)
   {
     $this->load->database();
+    
     $id_rekanan = $data['id_rekanan'];
     $nama_rekanan = $data['nama_rekanan'];
     $nama_pic = $data['pic'];
@@ -25,10 +26,19 @@ class Rekanan extends CI_Model
     return FALSE;
   }
 
-  function get_data()
+  function get_data($id)
   {
     $this->load->database();
-    $data = $this->db->query("Select * from Data_Rekanan");
+
+    if($id == "All")
+    {
+      $data = $this->db->query("Select * from Data_Rekanan");
+    }
+    
+    else
+    {
+      $data = $this->db->query("Select * from Data_Rekanan where id=$id");
+    }
     return $data->result();
   }
 
