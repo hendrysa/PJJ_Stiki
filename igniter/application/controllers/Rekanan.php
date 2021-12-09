@@ -46,7 +46,6 @@ class Rekanan extends CI_Controller {
 	public function update($id=-1)
 	{
 		$input=$this->input->post(NULL, TRUE);
-		echo var_dump($input);
 		if($this->input->post('submit') !== NULL)
 		{
 			$this->Model_rekanan->update_data($id, $input);
