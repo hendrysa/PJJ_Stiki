@@ -22,7 +22,7 @@ class Rekanan extends CI_Controller {
 
 		if(isset($delete))
 		{
-			$this->Rekanan->delete_data($delete);
+			$this->Model_rekanan->delete_data($delete);
 		}
 
 		$data['data'] = $this->Model_rekanan->get_data("All");
@@ -30,7 +30,7 @@ class Rekanan extends CI_Controller {
 	}
 
 	public function insert()
-	{
+	{	
 		$input=$this->input->post(NULL, TRUE);
 		if($this->input->post('submit') !== NULL)
 		{
@@ -45,10 +45,18 @@ class Rekanan extends CI_Controller {
 
 	public function update($id=-1)
 	{
+		$input=$this->input->post(NULL, TRUE);
+		echo var_dump($input);
+		if($this->input->post('submit') !== NULL)
+		{
+			$this->Model_rekanan->update_data($id, $input);
+			redirect("/rekanan/");
+		}
+
+
 		if($id >= 1)
 		{
 			$data['data'] = $this->Model_rekanan->get_data($id);
-			echo var_dump($data['data']);
 			$this->load->view('Rekanan/Update', $data);
 		}
 		else

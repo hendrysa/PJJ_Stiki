@@ -61,15 +61,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         <label for="jenis_rekanan" class="col-lg-3 control-label">Jenis Rekanan</label>
                                         <div class="col-lg-8">
                                             <div class="bs-component">
-                                                <div class="checkbox-custom checkbox-primary mb5">
-                                                    <input name="jenis" type="checkbox" id="chk_perguruan" checked="false" value="Perguruan Tinggi">
-                                                    <label for="chk_perguruan">Perguruan Tinggi</label>
-                                                </div>
-                                                <div class="checkbox-custom checkbox-primary mb5">
-                                                    <input name="jenis" type="checkbox" id="chk_asosiasi" checked="false" value="Asosiasi">
-                                                    <label for="chk_asosiasi">Asosiasi</label>
-                                                </div>
-                                                <input type="text" name="jenis_field" class="form-control" placeholder="Lainnya....">
+                                                <select id="jenis" name="jenis" class="form-control">
+                                                    <option>Perguruan Tinggi</option>
+                                                    <option>Asosiasi</option>
+                                                    <option>Lainnya</option>
+                                                </select>
+                                                <input id="jenis_field" type="hidden" name="jenis" class="form-control" disabled placeholder="Lainnya....">
                                             </div>
                                         </div>
                                     </div>
@@ -99,7 +96,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         <label for="email" class="col-lg-3 control-label">Email</label>
                                         <div class="col-lg-8">
                                             <div class="bs-component">
-                                                <input type="email" name="email" required class="form-control" placeholder="">
+                                                <input type="email" name="email" required class="form-control" placeholder="email@domain.com">
                                             </div>
                                         </div>
                                     </div>
@@ -108,7 +105,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         <label for="alamat" class="col-lg-3 control-label">Alamat</label>
                                         <div class="col-lg-8">
                                             <div class="bs-component">
-                                                <input type="text" name="alamat" required class="form-control" placeholder="">
+                                                <input type="text" name="alamat" required class="form-control" placeholder="Type Here...">
                                             </div>
                                         </div>
                                     </div>
@@ -117,7 +114,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         <label for="no_mou" class="col-lg-3 control-label">No. MOU</label>
                                         <div class="col-lg-8">
                                             <div class="bs-component">
-                                                <input type="text" name="no_mou" required class="form-control" placeholder="">
+                                                <input type="text" name="no_mou" required class="form-control" placeholder="Type Here...">
                                             </div>
                                         </div>
                                     </div>
@@ -126,7 +123,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         <label for="tanggal_mou" class="col-lg-3 control-label">Tanggal MOU</label>
                                         <div class="col-lg-8">
                                             <div class="bs-component">
-                                                <input type="date" name="tgl_mou" required class="form-control" placeholder="">
+                                                <input type="date" name="tgl_mou" required class="form-control" placeholder="mm / dd / yyyy">
                                             </div>
                                         </div>
                                     </div>
@@ -135,26 +132,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         <label for="kegiatan" class="col-lg-3 control-label">Kegiatan yang disepakati</label>
                                         <div class="col-lg-8">
                                             <div class="bs-component">
-                                                <div class="checkbox-custom checkbox-primary mb5">
-                                                    <input type="checkbox" name="kegiatan" checked="false" id="chk_kegiatan1" value="Pertukaran Pelajar">
-                                                    <label for="chk_kegiatan1">Pertukaran Pelajar</label>
-                                                </div>
-                                                <div class="checkbox-custom checkbox-primary mb5">
-                                                    <input type="checkbox" name="kegiatan" checked="false" id="chk_kegiatan2" value="Magang Kerja">
-                                                    <label for="chk_kegiatan2">Magang Kerja</label>
-                                                </div>
-                                                <div class="checkbox-custom checkbox-primary mb5">
-                                                    <input type="checkbox" name="kegiatan" checked="false" id="chk_kegiatan3" value="Studi Independent">
-                                                    <label for="chk_kegiatan3">Studi Independent</label>
-                                                </div>
-                                                <div class="checkbox-custom checkbox-primary mb5">
-                                                    <input type="checkbox" name="kegiatan" checked="false" id="chk_kegiatan4" value="Pertukaran Pelajar">
-                                                    <label for="chk_kegiatan4">Penelitian dan pengabdian</label>
-                                                </div>
-                                                <input type="text" name="kegiatan_field" id="chk_kegiatan5" class="form-control" placeholder="Lainnya....">
+                                                <select id="kegiatan" name="kegiatan" class="form-control">
+                                                    <option>Pertukaran Pelajar</option>
+                                                    <option>Magang Kerja</option>
+                                                    <option>Studi Independent</option>
+                                                    <option>Penelitian dan pengabdian</option>
+                                                    <option>Lainnya</option>
+                                                </select>
+                                                <input id="kegiatan_field" type="hidden" name="kegiatan" class="form-control" disabled placeholder="Lainnya....">
                                             </div>
                                         </div>
                                     </div>
+                                    
                                     <div class="form-group">
                                         <div class="row text-center">
                                             <button class="btn btn-primary" type="submit" name="submit" value="True">Submit</button>
@@ -178,6 +167,34 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         jQuery(document).ready(function() {
 
             $('input[type=checkbox]').prop('checked', false);
+
+            $("#jenis").change(function() {
+    			if($(this).find("option:selected").text() == "Lainnya")
+    			{
+    				$('input[id=jenis_field]').prop('type', "text");
+    				$('input[id=jenis_field]').prop('disabled', false);
+    			}
+    			else
+    			{
+    				$('input[id=jenis_field]').prop('type', "hidden");
+    				$('input[id=jenis_field]').prop('disabled', true);
+    			}
+
+			});
+
+            $("#kegiatan").change(function() {
+    			if($(this).find("option:selected").text() == "Lainnya")
+    			{
+    				$('input[id=kegiatan_field]').prop('type', "text");
+    				$('input[id=kegiatan_field]').prop('disabled', false);
+    			}
+    			else
+    			{
+    				$('input[id=kegiatan_field]').prop('type', "hidden");
+    				$('input[id=kegiatan_field]').prop('disabled', true);
+    			}
+
+			});
 
             "use strict";
 
