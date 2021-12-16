@@ -1,6 +1,6 @@
 <?php
 
-class Model_rekanan extends CI_Model
+class Model_international extends CI_Model
 {
   
   function insert_data($data)

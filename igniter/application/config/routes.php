@@ -56,3 +56,7 @@ $route['translate_uri_dashes'] = TRUE;
 $route['rekanan'] = 'Rekanan';
 $route['rekanan/insert'] = 'Rekanan/insert';
 $route['rekanan/update'] = 'Rekanan/update';
+
+$route['international'] = 'International';
+$route['international/insert'] = 'International/insert';
+$route['international/update'] = 'International/update';

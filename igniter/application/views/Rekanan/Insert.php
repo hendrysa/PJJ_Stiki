@@ -31,15 +31,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 <form class="form-horizontal" role="form" method="POST">
 
                                     <div class="form-group">
-                                        <label for="id_rekanan" class="col-lg-3 control-label">ID Rekanan</label>
-                                        <div class="col-lg-8">
-                                            <div class="bs-component">
-                                                <input type="text" name="id_rekanan" class="form-control required" placeholder="Type Here...">
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
                                         <label for="nama_rekanan" class="col-lg-3 control-label">Nama Rekanan</label>
                                         <div class="col-lg-8">
                                             <div class="bs-component">

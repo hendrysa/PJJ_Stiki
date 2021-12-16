@@ -30,15 +30,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 <form class="form-horizontal" role="form" method="POST">
 
                                     <div class="form-group">
-                                        <label for="id_rekanan" class="col-lg-3 control-label">ID Rekanan</label>
-                                        <div class="col-lg-8">
-                                            <div class="bs-component">
-                                                <input type="text" name="id_rekanan" class="form-control" required value="<?php echo $data[0]->ID_Rekanan; ?>">
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
                                         <label for="nama_rekanan" class="col-lg-3 control-label">Nama Rekanan</label>
                                         <div class="col-lg-8">
                                             <div class="bs-component">
@@ -61,6 +52,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         <div class="col-lg-8">
                                             <div class="bs-component">
                                                 <select id="jenis" name="jenis" class="form-control">
+                                                    <option selected hidden><?php echo $data[0]->Jenis_Rekanan; ?></option>
                                                     <option>Perguruan Tinggi</option>
                                                     <option>Asosiasi</option>
                                                     <option>Lainnya</option>
@@ -132,6 +124,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         <div class="col-lg-8">
                                             <div class="bs-component">
                                                 <select id="kegiatan" name="kegiatan" class="form-control">
+                                                    <option selected hidden><?php echo $data[0]->Kegiatan; ?></option>
                                                     <option>Pertukaran Pelajar</option>
                                                     <option>Magang Kerja</option>
                                                     <option>Studi Independent</option>
