@@ -24,7 +24,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <!-- Input Fields -->
                         <div class="panel">
                             <div class="panel-heading">
-                                <span class="panel-title">Daftar Rekanan</span>
+                                <span class="panel-title">Daftar International</span>
                             </div>
                             <div class="panel-body">
                                 <form class="form-horizontal" role="form" method="POST">
@@ -32,16 +32,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         <!-- Table Header -->
                                         <tr>
                                             <th class="text-center">id</th>
-                                            <th class="text-center">Nama Rekanan</th>
-                                            <th class="text-center">Nama PIC</th>
-                                            <th class="text-center">Jenis Rekanan</th>
-                                            <th class="text-center">Lingkup</th>
-                                            <th class="text-center">Nomor Telepon</th>
-                                            <th class="text-center">Email</th>
-                                            <th class="text-center">Alamat</th>
-                                            <th class="text-center">No MOU</th>
-                                            <th class="text-center">Tanggal MOU</th>
-                                            <th class="text-center">Kegiatan</th>
+                                            <th class="text-center">Institution Name</th>
+                                            <th class="text-center">MHS Surname</th>
+                                            <th class="text-center">MHS Givenname</th>
+                                            <th class="text-center">MHS Middlename</th>
                                             <th class="text-center">Action</th>
                                         </tr>
 
@@ -51,30 +45,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                 foreach($data as $i)
                                                 {
                                                     $id = $i->id;
-                                                    $nama_rekanan = $i->Nama_Rekanan;
-                                                    $pic = $i->Nama_PIC;
-                                                    $jenis = $i->Jenis_Rekanan;
-                                                    $lingkup = $i->Lingkup;
-                                                    $tlpn = $i->Nomor_Telepon;
-                                                    $email = $i->Email;
-                                                    $alamat = $i->Alamat;
-                                                    $no_mou = $i->No_MOU;
-                                                    $tgl_mou = $i->Tanggal_MOU;
-                                                    $kegiatan = $i->Kegiatan;
+                                                    $inst_name = $i->Institution_Name;
+                                                    $surname = $i->Surname;
+                                                    $givenname = $i->Givenname;
+                                                    $middlename = $i->Middlename;
 
                                                     echo "<tr>";
 
                                                     echo "<td class='text-center'>$id</td>";
-                                                    echo "<td class='text-center'>$nama_rekanan</td>";
-                                                    echo "<td class='text-center'>$pic</td>";
-                                                    echo "<td class='text-center'>$jenis</td>";
-                                                    echo "<td class='text-center'>$lingkup</td>";
-                                                    echo "<td class='text-center'>$tlpn</td>";
-                                                    echo "<td class='text-center'>$email</td>";
-                                                    echo "<td class='text-center'>$alamat</td>";
-                                                    echo "<td class='text-center'>$no_mou</td>";
-                                                    echo "<td class='text-center'>$tgl_mou</td>";
-                                                    echo "<td class='text-center'>$kegiatan</td>";
+                                                    echo "<td class='text-center'>$inst_name</td>";
+                                                    echo "<td class='text-center'>$surname</td>";
+                                                    echo "<td class='text-center'>$givenname</td>";
+                                                    echo "<td class='text-center'>$middlename</td>";
                                                     echo "<td class='text-center'>";
                                                         echo "<button class='btn btn-primary' type='submit' name='update' value=$id>Update</button>";
                                                         echo "&nbsp";

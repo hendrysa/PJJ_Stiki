@@ -32,11 +32,11 @@ class International extends CI_Controller {
 	public function insert()
 	{	
 		$input=$this->input->post(NULL, TRUE);
-		echo var_dump($input);
+
 		if($this->input->post('submit') !== NULL)
 		{
-			#$stat = $this->Model_international->insert_data($input);
-			#$this->load->view('International/Insert', $stat);	
+			$stat = $this->Model_international->insert_data($input);
+			$this->load->view('International/Insert', $stat);	
 		}
 		else
 		{
